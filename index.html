@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript</title>
+</head>
+
+<body>
+
+    <p id="input">
+
+        
+    </p>
+
+    <p id="output">
+
+        
+    </p>
+
+
+
+    <script>
+        let num = 2478 ;
+        let collect;
+        let resault = " ";
+        let arraynum = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 5, 4, 1];
+        let arraychar = ['m', 'mv', 'd', 'dc', 'c', 'cx', 'l', 'lx', 'x', 'v', 'vi', 'i'];
+        function roman_numbers(num) {
+            collect = num;
+            for (let i = 0; i < arraynum.length; i++) {
+                if ((collect % arraynum[i]) >= 0 && collect >= arraynum[i]) {
+                    collect -= arraynum[i];
+                    resault += arraychar[i] + "";
+                    check = true;
+                }
+                if (collect >= arraynum[i]) {
+                    i--;
+                }
+            }
+            document.getElementById("input").innerHTML=  " input    :" + "   " + num ;
+            document.getElementById("output").innerHTML= " output    :" + "   " + resault ;
+        }
+        roman_numbers(num );
+
+    </script>
+</body>
+
+</html>
